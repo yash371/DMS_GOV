@@ -1,0 +1,33 @@
+CRITICAL - 2023-07-03 14:42:21 --> The framework needs the following extension(s) installed and loaded: intl.
+in SYSTEMPATH\CodeIgniter.php on line 226.
+ 1 SYSTEMPATH\CodeIgniter.php(226): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+ 2 SYSTEMPATH\CodeIgniter.php(190): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(83): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2023-07-03 17:55:24 --> include(./navbar-top.php): Failed to open stream: No such file or directory
+in APPPATH\Views\UI\Layout\header.php on line 77.
+ 1 APPPATH\Views\UI\Layout\header.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(./navbar-top.php): Failed to open stream: No such file or directory', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\Layout\\header.php', 77)
+ 2 APPPATH\Views\UI\Layout\header.php(77): include()
+ 3 APPPATH\Views\UI\index.php(2): include_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\Layout\\header.php')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('UI/index', [], true)
+ 7 APPPATH\Controllers\Home.php(9): view('UI/index')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-03 17:55:49 --> include(./navbar-top.php): Failed to open stream: No such file or directory
+in APPPATH\Views\UI\Layout\header.php on line 77.
+ 1 APPPATH\Views\UI\Layout\header.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(./navbar-top.php): Failed to open stream: No such file or directory', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\Layout\\header.php', 77)
+ 2 APPPATH\Views\UI\Layout\header.php(77): include()
+ 3 APPPATH\Views\UI\index.php(2): include_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\Layout\\header.php')
+ 4 SYSTEMPATH\View\View.php(224): include('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('UI/index', [], true)
+ 7 APPPATH\Controllers\Home.php(9): view('UI/index')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
