@@ -53,3 +53,8 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 $routes->post('/user_login','Home::User_login');
 $routes->get('/dashboard','Home::Index');
 $routes->get('/logout','Home::Logout');
+$routes->get('/add_employee','Home::AddEmploye');
+$routes->post('/add_employee_post',"Home::AddEmployePost");
+$routes->get('/add_employee/(:num)','Home::AddEmploye/$1');
+$routes->post('/update_employee','Home::UpdateEmploye');
+
