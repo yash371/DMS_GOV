@@ -1,11 +1,14 @@
+<?php
+$page = basename($_SERVER['PHP_SELF']);
+?>
 <div id="sidebar" class="app-sidebar">
 
     <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
 
         <div class="menu">
-            <div class="menu-header">Navigation</div>
-            <div class="menu-item active">
-                <a href="index-2.html" class="menu-link">
+            <div class="menu-header">Creation & Allocation</div>
+            <div class="menu-item <?=$page == 'dashboard'?"active":"" ?>">
+                <a href="dashboard" class="menu-link">
                     <span class="menu-icon"><i class="bi bi-cpu"></i></span>
                     <span class="menu-text">Dashboard</span>
                 </a>
@@ -42,13 +45,21 @@
                     </div>
                 </div>
             </div>
-            <div class="menu-header">Components</div>
-            <div class="menu-item">
-                <a href="widgets.html" class="menu-link">
+            <div class="menu-header">Buckets</div>
+            <?php
+              if($_SESSION['User']->dept_id == 1){
+                ?>
+                     <div class="menu-item <?=$page == 'add_employee'?"active":"" ?>">
+                <a href="add_employee" class="menu-link">
                     <span class="menu-icon"><i class="bi bi-columns-gap"></i></span>
-                    <span class="menu-text">Widgets</span>
+                    <span class="menu-text">Employee </span>
                 </a>
             </div>
+                <?php
+
+              }
+            ?>
+       
             <div class="menu-item has-sub">
                 <a href="javascript:;" class="menu-link">
                     <div class="menu-icon">
