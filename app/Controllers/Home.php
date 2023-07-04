@@ -37,7 +37,9 @@ class Home extends BaseController
         $data=[];
         if($this->session->get('User')->dept_id == 1){
             $listOfUser=$this->Data_model->ListOfUser();
+            $caseTypes=$this->Data_model->getCaseTypes();
             $this->session->set('listOfUser',$listOfUser);
+            $this->session->set('caseTypes',$caseTypes);
         }
         return view('UI/index',$data);
     }
@@ -67,6 +69,9 @@ class Home extends BaseController
     }
     
     public function AddEmploye(){
+        if($this->session->get('User')->dept_id !=1){
+            return redirect()->to(base_url());
+        }
         $user_id=$this->request->getGet('user_id');
         if($user_id != null){
             $getDataBYID=$this->Data_model->ListOfUser($user_id);
@@ -143,5 +148,12 @@ class Home extends BaseController
         $result2=$this->Data_model->updateEmp($Empdata,$user_id);
         return redirect()->to(base_url().'add_employee');
 
+    }
+
+    ///Bundle Master Section start
+
+    public function BundleMaster(){
+        $data=[];
+        return view('UI/bundle_master',$data);
     }
 }

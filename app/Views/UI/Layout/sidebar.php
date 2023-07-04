@@ -13,12 +13,19 @@ $page = basename($_SERVER['PHP_SELF']);
                     <span class="menu-text">Dashboard</span>
                 </a>
             </div>
+            <?php
+              if($_SESSION['User']->dept_id == 1 ||$_SESSION['User']->dept_id == 2){
+                ?>
             <div class="menu-item">
-                <a href="analytics.html" class="menu-link">
-                    <span class="menu-icon"><i class="bi bi-bar-chart"></i></span>
-                    <span class="menu-text">Analytics</span>
+                <a href="bundle_master" class="menu-link">
+                    <span class="menu-icon"><i class="bi bi-file-earmark-break"></i></span>
+                    <span class="menu-text">Bundle Master</span>
                 </a>
             </div>
+            <?php
+
+}
+?>
             <div class="menu-item has-sub">
                 <a href="#" class="menu-link">
                     <span class="menu-icon">

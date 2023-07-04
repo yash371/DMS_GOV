@@ -1,5 +1,8 @@
 <!-- Header -->
-<?php include 'Layout/header.php'; ?>
+<?php 
+include 'Layout/header.php';
+
+?>
 <div id="content" class="app-content">
     <!-- ============================================= -->
 
@@ -79,13 +82,13 @@
                                     type="text" value="Department" disabled /></div>
                             <div class="col-8 p-0">
                                 <select class="form-select rounded-0 rounded-end" name="department" required>
-                                    <option  value="2">Master</option>  
+                                    <option  value="2">Admin</option>  
                                     <option  selected value="3">Scanner</option>
                                     <option value="4">Image QC</option>
                                     <?php
                                     if($update){
                                         switch($user_data[0]->dept_id){
-                                            case 2:$depart= "Master";break;
+                                            case 2:$depart= "Admin";break;
                                 case 3:$depart="Scanner";break;
                                 case 4:$depart="Image QC";break;
                                 default:$depart="Call Devloper";
@@ -193,7 +196,7 @@
                             <td><?=$emp->username?></td>
                             <td><?=$emp->password?></td>
                             <td><?php switch($emp->dept_id){
-                                case 2:echo "Master";break;
+                                case 2:echo "Admin";break;
                                 case 3:echo "Scanner";break;
                                 case 4:echo "Image QC";break;
                                 default:echo "Call Devloper";

@@ -58,3 +58,5 @@ $routes->post('/add_employee_post',"Home::AddEmployePost");
 $routes->get('/add_employee/(:num)','Home::AddEmploye/$1');
 $routes->post('/update_employee','Home::UpdateEmploye');
 
+//Bundle Master Routing
+$routes->get('/bundle_master','Home::BundleMaster');

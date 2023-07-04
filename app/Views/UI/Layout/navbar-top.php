@@ -138,7 +138,7 @@
                 <img src="assets/img/user/profile.jpg" alt="Profile" height="60" />
             </div>
             <div class="menu-text d-sm-block d-none">
-               
+               <?=$_SESSION['User']->dept_id != 1? "" :"Super Admin"?>
             </div>
         </a>
         <div class="dropdown-menu dropdown-menu-end me-lg-3 fs-11px mt-1">

@@ -36,5 +36,9 @@ class Data_model extends Model{
         return $this->db->table('employee')->where('user_id',$user_id)->update($empData);
     }
 
+    public function getCaseTypes(){
+        return $this->getQuery("SELECT * FROM `case_types` WHERE `case_types`.`status`= 1 ");
+    }
+
 
 }
