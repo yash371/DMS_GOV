@@ -3,7 +3,7 @@
     <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
 
         <div class="menu">
-            <div class="menu-header">Navigation</div>
+            <div class="menu-header">Creation & Allocation</div>
             <div class="menu-item active">
                 <a href="index-2.html" class="menu-link">
                     <span class="menu-icon"><i class="bi bi-cpu"></i></span>
@@ -42,11 +42,18 @@
                     </div>
                 </div>
             </div>
-            <div class="menu-header">Components</div>
+            <div class="menu-header">Buckets</div>
+            <?php
+              if($_SESSION['User']->dept_id == 1){
+                ?>
+                <?php
+
+              }
+            ?>
             <div class="menu-item">
                 <a href="widgets.html" class="menu-link">
                     <span class="menu-icon"><i class="bi bi-columns-gap"></i></span>
-                    <span class="menu-text">Widgets</span>
+                    <span class="menu-text">Employee</span>
                 </a>
             </div>
             <div class="menu-item has-sub">
