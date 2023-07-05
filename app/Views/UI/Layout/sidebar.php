@@ -16,42 +16,55 @@ $page = basename($_SERVER['PHP_SELF']);
             <?php
               if($_SESSION['User']->dept_id == 1 ||$_SESSION['User']->dept_id == 2){
                 ?>
-            <div class="menu-item">
+            <div class="menu-item <?=$page == 'bundle_master'?"active":"" ?>">
                 <a href="bundle_master" class="menu-link">
                     <span class="menu-icon"><i class="bi bi-file-earmark-break"></i></span>
                     <span class="menu-text">Bundle Master</span>
                 </a>
             </div>
-            <?php
-
-}
-?>
+            <div class="menu-item <?=$page == 'bundle_list'?"active":"" ?>">
+                <a href="bundle_list" class="menu-link">
+                    <span class="menu-icon"><i class="bi bi-file-earmark-break"></i></span>
+                    <span class="menu-text">Bundle List</span>
+                </a>
+            </div>
             <div class="menu-item has-sub">
                 <a href="#" class="menu-link">
                     <span class="menu-icon">
-                        <i class="bi bi-envelope"></i>
+                        <i class="bi bi-collection"></i>
                     </span>
-                    <span class="menu-text">Email</span>
+                    <span class="menu-text">List</span>
                     <span class="menu-caret"><b class="caret"></b></span>
                 </a>
                 <div class="menu-submenu">
-                    <div class="menu-item">
-                        <a href="email_inbox.html" class="menu-link">
-                            <span class="menu-text">Inbox</span>
+                    <div class="menu-item <?=$page == 'case_assignment'?"active":"" ?>">
+                        <a href="case_assignment" class="menu-link">
+                            <span class="menu-text">Case Assignment</span>
                         </a>
                     </div>
-                    <div class="menu-item">
-                        <a href="email_compose.html" class="menu-link">
-                            <span class="menu-text">Compose</span>
-                        </a>
-                    </div>
-                    <div class="menu-item">
-                        <a href="email_detail.html" class="menu-link">
-                            <span class="menu-text">Detail</span>
+                    <div class="menu-item <?=$page == 'assign_cases'?"active":"" ?>">
+                        <a href="assign_cases" class="menu-link">
+                            <span class="menu-text">Assign Cases</span>
                         </a>
                     </div>
                 </div>
             </div>
+            <?php
+
+}
+else if($_SESSION['User']->dept_id == 3){
+    ?>
+    <div class="menu-item <?=$page == 'scan_center'?"active":"" ?>">
+                <a href="scan_center" class="menu-link">
+                    <span class="menu-icon"><i class="bi bi-file-earmark-break"></i></span>
+                    <span class="menu-text">Scan Center</span>
+                </a>
+            </div>
+    <?php
+}
+?>
+
+            
             <div class="menu-header">Buckets</div>
             <?php
               if($_SESSION['User']->dept_id == 1){

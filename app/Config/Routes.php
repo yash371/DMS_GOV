@@ -63,3 +63,16 @@ $routes->get('/bundle_master','Home::BundleMaster');
 $routes->post('/bundle_master_temp_post','Home::BundleMasterTempPost');
 $routes->add('/bundle_master/(:num)','Home::BundleMaster/$1');
 $routes->add('/bundle_master_final_post','Home::BundleMasterFinalPost');
+
+//Bundle List Routing
+$routes->get('/bundle_list','Home::BundleList');
+
+//Case Assignment Routing
+$routes->get('/case_assignment','Home::CaseAssignment');
+$routes->post('/case_assignment_post','Home::CaseAssignment');
+
+//Assign Cases
+$routes->get('/assign_cases','Home::AssignCases');
+
+//Scanner Routing
+$routes->get('/scan_center','Home::ScanCenter');

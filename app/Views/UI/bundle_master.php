@@ -17,8 +17,8 @@ include_once('Layout/header.php');
                 <div class="row mb-3">
                     <input type="hidden" name="bundle_no" value="<?=$_SESSION['Session_Bundle_no']?>" required/>
                     <input type="hidden" name="barcode" value="<?=$_SESSION['Session_Case_no']?>" required/>
-                    <div class="col-3">Bundle No/Batch Code: <input  class="form-control bg-dark" type="text" value="<?="BUN".$_SESSION['Session_Bundle_no']?>" disable required /></div>
-                    <div class="col-3">Barcode: <input  class="form-control bg-dark" type="text" value="<?=$_SESSION['Session_Case_no']?>" disable required /></div>
+                    <div class="col-3">Bundle No/Batch Code: <input  class="form-control bg-dark" type="text" value="<?="BUN".$_SESSION['Session_Bundle_no']?>" disabled required /></div>
+                    <div class="col-3">Barcode: <input  class="form-control bg-dark" type="text" value="<?=$_SESSION['Session_Case_no']?>" disabled required /></div>
                     <div class="col-3">Case No/File No: <input name="case_no" class="form-control " type="text"  required /></div>
                     <div class="col-3">Case Type/File type: <select name="case_type" class="form-select" type="text"  required >
                         <?php 

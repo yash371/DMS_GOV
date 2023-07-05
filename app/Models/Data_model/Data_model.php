@@ -15,6 +15,10 @@ class Data_model extends Model{
             return $this->getQuery("SELECT * FROM `user` u INNER JOIN `employee` e ON u.user_id = e.user_id WHERE u.dept_id != 1");
     }
 
+    public function ListOfUserByDepart($id){
+            return $this->getQuery("SELECT * FROM `user` u INNER JOIN `employee` e ON u.user_id = e.user_id WHERE   u.dept_id = '$id'");
+}
+
     public function checkRegID($id){
         return $this->getQuery("SELECT * FROM `user` WHERE `regd_no`='$id'");
     }
@@ -62,15 +66,26 @@ class Data_model extends Model{
         return $this->db->table('case_bucket')->insert($data);
     }
 
-    public function getCases($barcode='',$type='ASC'){
+    public function getCases($barcode='',$type='ASC',$stage_id='',$join=false){
         if($barcode != ''){
             return $this->getQuery("SELECT * FROM `case_bucket` WHERE `barcode`='$barcode';");
         }
+        if($join){
+            return $this->getQuery("SELECT * FROM `case_bucket` c INNER JOIN `employee` e ON c.assign_user_id = e.user_id  WHERE c.stage_id='$stage_id' ORDER BY c.case_id $type ;");
+        }
+        if($stage_id !=''){
+            return $this->getQuery("SELECT * FROM `case_bucket` WHERE `stage_id`='$stage_id';");
+        }
+        
         return $this->getQuery("SELECT * FROM `case_bucket` ORDER BY`case_bucket`.`case_id` $type;");
     }
 
     public function deleteTempcases($case_id){
         return $this->db->query("DELETE FROM `temp_case_bucket` WHERE `temp_case_bucket`.`case_id`='$case_id' ");
+    }
+
+    public function updateCaseAssignUser($case_id,$data){
+        return $this->db->table('case_bucket')->where('case_id',$case_id)->update($data);
     }
 
 

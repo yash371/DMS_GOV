@@ -37,9 +37,8 @@ class Home extends BaseController
         $data=[];
         if($this->session->get('User')->dept_id == 1){
             $listOfUser=$this->Data_model->ListOfUser();
-            $caseTypes=$this->Data_model->getCaseTypes();
             $this->session->set('listOfUser',$listOfUser);
-            $this->session->set('caseTypes',$caseTypes);
+          
         }
         return view('UI/index',$data);
     }
@@ -52,6 +51,8 @@ class Home extends BaseController
            foreach($result as $key=>$value){
                 if($value->password == $password){
                         $this->session->set('User',$value);
+                        $caseTypes=$this->Data_model->getCaseTypes();
+                        $this->session->set('caseTypes',$caseTypes);
                         $this->session->set('Bundle_master',false);
                         return  redirect()->to(base_url().'dashboard');
                 }else{
@@ -247,7 +248,8 @@ class Home extends BaseController
                 if($key==0){
                     $BundleData=[
                         'bundle_no'=>$value->bundle_no,
-                        'bundle_length'=>count($tempCases)
+                        'bundle_length'=>count($tempCases),
+                        'created_by_user_id'=>$this->session->get('User')->user_id
                     ];
                     $this->Data_model->setBundle($BundleData);
                 }
@@ -271,5 +273,63 @@ class Home extends BaseController
         else{
             return  redirect()->to(base_url().'bundle_master');
         }
+    }
+
+      //Bundle List
+    public function BundleList(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $data=[
+            'bundle_list'=>$this->Data_model->getBundle(),
+            'case_list'=>$this->Data_model->getCases()
+        ];
+        return view('UI/bundle_list',$data);
+    }
+
+    /// Stage 1 -- Case Assignment
+    public function CaseAssignment(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $user_id=$this->request->getPost('user_id');
+        if($user_id != null){
+            $case_id=$this->request->getPost('case_id');
+            $da=[
+                'assign_user_id'=>$user_id,
+                'assign_time'=>date('Y/m/d h:i:s a', time()),
+                'stage_id'=>2
+            ];
+            $this->Data_model->updateCaseAssignUser($case_id,$da);
+        }
+        $data=[
+            'case_bucket'=>$this->Data_model->getCases('','ASC','1'),
+            'users'=>$this->Data_model->ListOfUserByDepart(3)
+        ];
+        return view('UI/case_assignment',$data);
+    }
+
+    /// Stage 2 -- Assign Cases
+    public function AssignCases(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $data=[
+            'case_bucket'=>$this->Data_model->getCases('','DESC','2',true),
+        ];
+        return view('UI/assign_cases',$data);
+    }
+
+  
+
+    //Scanner Part
+    public function ScanCenter(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $data=[
+            'scan_list'=>$this->Data_model->getCases('','DESC','2',true)
+        ];
+    return view('UI/scan_center',$data);
     }
 }
