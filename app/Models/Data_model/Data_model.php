@@ -40,5 +40,38 @@ class Data_model extends Model{
         return $this->getQuery("SELECT * FROM `case_types` WHERE `case_types`.`status`= 1 ");
     }
 
+    public function setBundle($data){
+        return $this->db->table('bundle')->insert($data);
+    }
+    public function getBundle($bundle_no='',$type='ASC'){
+            if($bundle_no != ''){
+                return $this->getQuery("SELECT * FROM `bundle` WHERE `bundle_no`='$bundle_no';");
+            }
+            return $this->getQuery("SELECT * FROM `bundle` ORDER BY `bundle`.`bundle_id` $type;");
+    }
+    public function setTempCases($data){
+        return $this->db->table('temp_case_bucket')->insert($data);
+    }
+    public function getTempCases($type='ASC'){
+        return $this->getQuery("SELECT * FROM `temp_case_bucket` ORDER BY `temp_case_bucket`.`barcode` $type ;");
+    }
+    public function trucateTempCases(){
+        return $this->db->query("TRUNCATE `temp_case_bucket`;");
+    }
+    public function setCases($data){
+        return $this->db->table('case_bucket')->insert($data);
+    }
+
+    public function getCases($barcode='',$type='ASC'){
+        if($barcode != ''){
+            return $this->getQuery("SELECT * FROM `case_bucket` WHERE `barcode`='$barcode';");
+        }
+        return $this->getQuery("SELECT * FROM `case_bucket` ORDER BY`case_bucket`.`case_id` $type;");
+    }
+
+    public function deleteTempcases($case_id){
+        return $this->db->query("DELETE FROM `temp_case_bucket` WHERE `temp_case_bucket`.`case_id`='$case_id' ");
+    }
+
 
 }

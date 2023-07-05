@@ -52,6 +52,7 @@ class Home extends BaseController
            foreach($result as $key=>$value){
                 if($value->password == $password){
                         $this->session->set('User',$value);
+                        $this->session->set('Bundle_master',false);
                         return  redirect()->to(base_url().'dashboard');
                 }else{
                     return $this->Login($alert='Invalid Credential!!');
@@ -69,6 +70,9 @@ class Home extends BaseController
     }
     
     public function AddEmploye(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
         if($this->session->get('User')->dept_id !=1){
             return redirect()->to(base_url());
         }
@@ -92,6 +96,9 @@ class Home extends BaseController
         return view('UI/add_emp',$data);
     }
     public function AddEmployePost(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
         $Userdata=[
             'dept_id'=>$this->request->getPost('department'),
             'regd_no'=>$this->request->getPost('reg_no'),
@@ -153,7 +160,116 @@ class Home extends BaseController
     ///Bundle Master Section start
 
     public function BundleMaster(){
-        $data=[];
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $case_id=$this->request->getGet('temp_id');
+        if($case_id != null){
+            $this->Data_model->deleteTempcases($case_id);
+        }
+        if($this->session->get('Bundle_master')){
+            
+        }
+        else
+        {
+            $this->Data_model->trucateTempCases();
+            $newBundleNo='';
+            $newBarcode='';
+            $getBundleDetails=$this->Data_model->getBundle('','DESC');
+            $getCasesDetails=$this->Data_model->getCases('','DESC');
+         if(!empty($getBundleDetails)){
+            foreach($getBundleDetails as $key=>$bundle){
+                $newBundleNo=((int)$bundle->bundle_no) + 1;
+                break;
+            }
+             }else{
+            $newBundleNo="10000001";  
+             } 
+        if(!empty($getCasesDetails)){
+            foreach($getCasesDetails as $key=>$cases){
+                $newBarcode=((int)$cases->barcode) + 1;
+                break;
+            }
+        }   else{
+            $newBarcode='1000000001';
+        }  
+            $this->session->set('Session_Bundle_no',$newBundleNo);
+            $this->session->set('Session_Case_no',$newBarcode);
+            $this->session->set('Bundle_master',true);
+    }      
+        $data=[
+            'temp_case_bucket'=>$this->Data_model->getTempCases()
+        ];
         return view('UI/bundle_master',$data);
+    }
+
+    public function BundleMasterTempPost(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $data=[
+            'bundle_no'=>$this->request->getPost('bundle_no'),
+            'barcode'=>$this->request->getPost('barcode'),
+            'case_no'=>$this->request->getPost('case_no'),
+            'case_type_id'=>$this->request->getPost('case_type'),
+            'case_name'=>$this->request->getPost('case_name'),
+            'case_year'=>$this->request->getPost('case_year')
+        ];
+        $this->Data_model->setTempCases($data);
+        $getTempCasesDetails=$this->Data_model->getTempCases('DESC');
+        if(!empty($getTempCasesDetails)){
+            foreach($getTempCasesDetails as $key=>$value){
+                $newBarcode=((int)$value->barcode) + 1;
+                $this->session->set('Session_Case_no',$newBarcode);
+                break;
+            }
+        }
+        return  redirect()->to(base_url().'bundle_master');
+    }
+
+    public function BundleMasterFinalPost(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $tempCases=$this->Data_model->getTempCases();
+        $newBarcode='';
+        $getCasesDetails=$this->Data_model->getCases('','DESC');
+        if(!empty($getCasesDetails)){
+            foreach($getCasesDetails as $key=>$cases){
+                $newBarcode=((int)$cases->barcode) + 1;
+                break;
+            }
+        }   else{
+            $newBarcode='1000000001';
+        }  
+        if(!empty($tempCases)){
+            foreach($tempCases as $key=>$value){
+                if($key==0){
+                    $BundleData=[
+                        'bundle_no'=>$value->bundle_no,
+                        'bundle_length'=>count($tempCases)
+                    ];
+                    $this->Data_model->setBundle($BundleData);
+                }
+                $data=[
+                    'bundle_no'=>$value->bundle_no,
+                    'barcode'=>$newBarcode,
+                    'case_no'=>$value->case_no,
+                    'case_type_id'=>$value->case_type_id,
+                    'case_name'=>$value->case_name,
+                    'case_year'=>$value->case_year,
+                    'stage_id'=>1,
+                ];
+                $this->Data_model->setCases($data);
+                $newBarcode++;
+                
+            }
+            $this->session->set('Bundle_master',false);
+            return  redirect()->to(base_url());
+
+        }
+        else{
+            return  redirect()->to(base_url().'bundle_master');
+        }
     }
 }
