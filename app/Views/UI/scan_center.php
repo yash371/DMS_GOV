@@ -31,6 +31,7 @@ include_once('Layout/header.php');
                                 foreach($scan_list as $key=>$Case){
                                     if($Case->user_id == $_SESSION['User']->user_id){
                                     ?>
+                                  
                                     <tr style="background: rgba(0,0,0,0.5);">
                                         <td valign="middle"><?=$key+1?></td>
                                         <td valign="middle"><?=$Case->barcode?></td>
@@ -39,10 +40,25 @@ include_once('Layout/header.php');
                                         <td valign="middle"><?=$Case->case_type_id?></td>
                                         <td valign="middle"><?=$Case->case_year?></td>
                                         <td class="text-end" valign="middle">
-                                        <button class="btn btn-sm btn-theme">Accept</button>
+                                        <?php   if($Case->assign_status != 1) { ?>
+                                            <form action="scan_accept"  id="addTemp" method="post" accept-charset="utf-8">
+                                                <input type="hidden" name="case_id" value="<?=$Case->case_id?>"/>
+                                                <?php if($acceptedOne) {
+                                                    ?>
+                                                    <button  class="btn btn-sm btn-theme" disabled>Accept</button>
+                                                    <?php
+                                                }else{?>
+                                                <button type="submit" class="btn btn-sm btn-theme">Accept</button>
+                                            </form><?php }} else{
+                                            ?>
+                                            <button class="btn btn-sm btn-theme" disabled>Accepted</button>
+                                            <?php
+                                            }
+                                        ?>
                                         </td>
                                         
                                     </tr>
+                                    
                                     <?php
                                 }}
                             }else{

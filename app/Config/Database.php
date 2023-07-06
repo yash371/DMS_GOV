@@ -22,8 +22,9 @@ class Database extends Config
     public string $defaultGroup = 'default';
 
     /**
-     * The default database connection.
+     * The default database connection. Subha@99 3306
      */
+
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
@@ -41,7 +42,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port'     => 3307,
     ];
 
     /**

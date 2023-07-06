@@ -88,5 +88,9 @@ class Data_model extends Model{
         return $this->db->table('case_bucket')->where('case_id',$case_id)->update($data);
     }
 
+    public function getCaseByuser_id($case_id){
+        return $this->getQuery("SELECT * FROM `case_bucket` WHERE `assign_user_id`='$case_id' AND `assign_status`=1;");
+    }
+
 
 }

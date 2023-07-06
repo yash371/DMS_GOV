@@ -72,7 +72,9 @@ $routes->get('/case_assignment','Home::CaseAssignment');
 $routes->post('/case_assignment_post','Home::CaseAssignment');
 
 //Assign Cases
-$routes->get('/assign_cases','Home::AssignCases');
+$routes->get('/scan_assign_cases','Home::ScanAssignCases');
 
 //Scanner Routing
 $routes->get('/scan_center','Home::ScanCenter');
+$routes->post('/scan_accept','Home::ScanAccept');
+$routes->get('/scan_accept_case','Home::ScanAcceptCase');

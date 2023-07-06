@@ -1,0 +1,196 @@
+CRITICAL - 2023-07-06 01:24:01 --> Undefined property: CodeIgniter\View\View::$load
+in APPPATH\Views\UI\index.php on line 6.
+ 1 APPPATH\Views\UI\index.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$load', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php', 6)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('UI/index', [], true)
+ 5 APPPATH\Controllers\Home.php(43): view('UI/index', [])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->Index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-06 01:24:30 --> Call to undefined function directory_map()
+in APPPATH\Views\UI\index.php on line 8.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('UI/index', [], true)
+ 4 APPPATH\Controllers\Home.php(43): view('UI/index', [])
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->Index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-06 01:27:12 --> Call to undefined function App\Controllers\directory_map()
+in APPPATH\Controllers\Home.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->Index()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-06 01:29:26 --> Undefined variable $dir
+in APPPATH\Views\UI\index.php on line 12.
+ 1 APPPATH\Views\UI\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dir', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('UI/index', [], true)
+ 5 APPPATH\Controllers\Home.php(47): view('UI/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->Index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-06 01:43:00 --> Undefined variable $regd_no
+in APPPATH\Controllers\Home.php on line 133.
+ 1 APPPATH\Controllers\Home.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $regd_no', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Controllers\\Home.php', 133)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->AddEmployePost()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-06 02:01:08 --> Undefined variable $img
+in APPPATH\Views\UI\index.php on line 11.
+ 1 APPPATH\Views\UI\index.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $img', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php', 11)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('UI/index', [], true)
+ 5 APPPATH\Controllers\Home.php(49): view('UI/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->Index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+ERROR - 2023-07-06 05:29:54 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'multisoft_dms', 3306, '', 0)
+#1 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Auth_model\Auth_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Controllers\Home.php(55): App\Models\Auth_model\Auth_model->getUserByusername('super_admin')
+#5 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(932): App\Controllers\Home->User_login()
+#6 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WOR...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Auth_model\Auth_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#3 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Controllers\Home.php(55): App\Models\Auth_model\Auth_model->getUserByusername('super_admin')
+#4 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(932): App\Controllers\Home->User_login()
+#5 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WOR...')
+#9 {main}
+CRITICAL - 2023-07-06 05:29:54 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\Auth_model\Auth_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `user` WHERE `username`=\'super_admin\'')
+ 3 APPPATH\Controllers\Home.php(55): App\Models\Auth_model\Auth_model->getUserByusername('super_admin')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->User_login()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+ERROR - 2023-07-06 05:30:18 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'multisoft_dms', 3306, '', 0)
+#1 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Auth_model\Auth_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Controllers\Home.php(55): App\Models\Auth_model\Auth_model->getUserByusername('super_admin')
+#5 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(932): App\Controllers\Home->User_login()
+#6 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WOR...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Auth_model\Auth_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#3 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Controllers\Home.php(55): App\Models\Auth_model\Auth_model->getUserByusername('super_admin')
+#4 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(932): App\Controllers\Home->User_login()
+#5 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WOR...')
+#9 {main}
+CRITICAL - 2023-07-06 05:30:18 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\Auth_model\Auth_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `user` WHERE `username`=\'super_admin\'')
+ 3 APPPATH\Controllers\Home.php(55): App\Models\Auth_model\Auth_model->getUserByusername('super_admin')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->User_login()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+ERROR - 2023-07-06 06:22:06 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'multisoft_dms', 3306, '', 0)
+#1 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Data_model\Data_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Data_model\Data_model.php(15): App\Models\Data_model\Data_model->getQuery('SELECT * FROM `...')
+#5 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Controllers\Home.php(45): App\Models\Data_model\Data_model->ListOfUser()
+#6 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(932): App\Controllers\Home->Index()
+#7 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WOR...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Data_model\Data_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#3 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Models\Data_model\Data_model.php(15): App\Models\Data_model\Data_model->getQuery('SELECT * FROM `...')
+#4 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\app\Controllers\Home.php(45): App\Models\Data_model\Data_model->ListOfUser()
+#5 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(932): App\Controllers\Home->Index()
+#6 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\PERSONAL\WORK\MultiSoft\DMS_HIGH_COURT\system\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WOR...')
+#10 {main}
+CRITICAL - 2023-07-06 06:22:06 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\Data_model\Data_model.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `user` u INNER JOIN `employee` e ON u.user_id = e.user_id WHERE u.dept_id != 1')
+ 3 APPPATH\Models\Data_model\Data_model.php(15): App\Models\Data_model\Data_model->getQuery('SELECT * FROM `user` u INNER JOIN `employee` e ON u.user_id = e.user_id WHERE u.dept_id != 1')
+ 4 APPPATH\Controllers\Home.php(45): App\Models\Data_model\Data_model->ListOfUser()
+ 5 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->Index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-06 07:16:53 --> Undefined array key 0
+in APPPATH\Controllers\Home.php on line 385.
+ 1 APPPATH\Controllers\Home.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Controllers\\Home.php', 385)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->ScanAcceptCase()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')
+CRITICAL - 2023-07-06 07:19:25 --> Undefined variable $
+in APPPATH\Views\UI\scan_accepted.php on line 52.
+ 1 APPPATH\Views\UI\scan_accepted.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $', 'C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\scan_accepted.php', 52)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\app\\Views\\UI\\scan_accepted.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('UI/scan_accepted', [], true)
+ 5 APPPATH\Controllers\Home.php(394): view('UI/scan_accepted', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->ScanAcceptCase()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\PERSONAL\\WORK\\MultiSoft\\DMS_HIGH_COURT\\public\\index.php')

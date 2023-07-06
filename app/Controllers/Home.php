@@ -34,7 +34,13 @@ class Home extends BaseController
         if(empty($this->session->get('User'))){
             return  redirect()->to(base_url());
         }
-        $data=[];
+        $folder = "assets/img/gallery/"; // Your Path to folder
+        $map = glob($folder . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+        $filee=scandir($folder);
+        $data=[
+            'map'=>$map,
+            'filee'=>$filee
+        ];
         if($this->session->get('User')->dept_id == 1){
             $listOfUser=$this->Data_model->ListOfUser();
             $this->session->set('listOfUser',$listOfUser);
@@ -126,6 +132,10 @@ class Home extends BaseController
                 'surname'=>$this->request->getPost('emp_lastname'),
                 'gender'=>$this->request->getPost('gender'),
               ];
+            $dir='ConfigPath/users/'.$this->request->getPost('reg_no');
+            if (!file_exists($dir)) {
+                mkdir($dir, 0777, true);
+            }  
             $push2=$this->Data_model->insertEmpData($Empdata);
 
             return redirect()->to(base_url().'add_employee');
@@ -263,6 +273,10 @@ class Home extends BaseController
                     'stage_id'=>1,
                 ];
                 $this->Data_model->setCases($data);
+                $dir='ConfigPath/cases/'.$newBarcode;
+                if (!file_exists($dir)) {
+                    mkdir($dir, 0777, true);
+                } 
                 $newBarcode++;
                 
             }
@@ -295,6 +309,7 @@ class Home extends BaseController
         $user_id=$this->request->getPost('user_id');
         if($user_id != null){
             $case_id=$this->request->getPost('case_id');
+            date_default_timezone_set('Asia/Kolkata');
             $da=[
                 'assign_user_id'=>$user_id,
                 'assign_time'=>date('Y/m/d h:i:s a', time()),
@@ -310,7 +325,7 @@ class Home extends BaseController
     }
 
     /// Stage 2 -- Assign Cases
-    public function AssignCases(){
+    public function ScanAssignCases(){
         if(empty($this->session->get('User'))){
             return  redirect()->to(base_url());
         }
@@ -327,9 +342,57 @@ class Home extends BaseController
         if(empty($this->session->get('User'))){
             return  redirect()->to(base_url());
         }
+        $acceptedOne=false;
+        $scan_list=$this->Data_model->getCases('','DESC','2',true);
+        foreach($scan_list as $key=>$value){
+            if($value->user_id == $this->session->get('User')->user_id){
+                if($value->assign_status == 1){
+                        $acceptedOne=true;
+                }
+            }
+        }
         $data=[
-            'scan_list'=>$this->Data_model->getCases('','DESC','2',true)
+            'scan_list'=>$scan_list,
+            'acceptedOne'=>$acceptedOne
         ];
     return view('UI/scan_center',$data);
+    }
+
+    public function ScanAccept(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $case_id=$this->request->getPost('case_id');
+        date_default_timezone_set('Asia/Kolkata');
+        $data=[
+            'assign_status'=>1,
+            'accept_time'=>date('Y/m/d h:i:s a', time())
+        ];
+        $this->Data_model->updateCaseAssignUser($case_id,$data);
+        return  redirect()->to(base_url().'scan_center');
+    }
+
+    public function ScanAcceptCase(){
+        if(empty($this->session->get('User'))){
+            return  redirect()->to(base_url());
+        }
+        $folder="ConfigPath/users/{$this->session->get('User')->regd_no}/";
+        $map = glob($folder . '*.{JPG,jpg,jpeg,png,gif}',GLOB_BRACE );
+        $case_details=$this->Data_model->getCaseByuser_id($this->session->get('User')->user_id);
+        if(!empty($case_details)){
+            $data=[
+                'fetch_data'=>$map,
+                'folder'=>$folder,
+                'case_details'=>$case_details[0]
+            ];
+        }else{
+        $data=[
+            'fetch_data'=>$map,
+            'folder'=>$folder,
+            'case_details'=>null
+        ];
+        return  redirect()->to(base_url().'scan_center');
+    }
+        return view('UI/scan_accepted',$data);
     }
 }

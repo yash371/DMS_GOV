@@ -42,9 +42,9 @@ $page = basename($_SERVER['PHP_SELF']);
                             <span class="menu-text">Case Assignment</span>
                         </a>
                     </div>
-                    <div class="menu-item <?=$page == 'assign_cases'?"active":"" ?>">
-                        <a href="assign_cases" class="menu-link">
-                            <span class="menu-text">Assign Cases</span>
+                    <div class="menu-item <?=$page == 'scan_assign_cases'?"active":"" ?>">
+                        <a href="scan_assign_cases" class="menu-link">
+                            <span class="menu-text">Scan Assign Cases</span>
                         </a>
                     </div>
                 </div>
@@ -58,6 +58,12 @@ else if($_SESSION['User']->dept_id == 3){
                 <a href="scan_center" class="menu-link">
                     <span class="menu-icon"><i class="bi bi-file-earmark-break"></i></span>
                     <span class="menu-text">Scan Center</span>
+                </a>
+            </div>
+            <div class="menu-item <?=$page == 'scan_accept_case'?"active":"" ?>">
+                <a href="scan_accept_case" class="menu-link">
+                    <span class="menu-icon"><i class="bi bi-file-earmark-break"></i></span>
+                    <span class="menu-text">Scan Accept Case</span>
                 </a>
             </div>
     <?php
